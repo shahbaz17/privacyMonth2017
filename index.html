@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Privacy Month 2017</title>
+    <meta name="author" content="Md Shahbaz Alam">
+    <meta name="description" content="Celebrate privacy month">
+    <meta property="og:title" content="Privacy Month"/>
+    <meta property="og:site_name" content="Privacy month"/>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Stay Secure , Support Privacy</h1>
+    <div class="container">
+      <div class="manifesto">
+        " Individuals' security and privacy on the Internet are fundamental and must not be treated as optional." 
+        <i>- mozilla manifesto </i>
+      </div>
+      <p style="font-size:14px;line-height:3;text-align:center">Upload your profile picture to generate one like the shown below. Change your profile picture to support and promote <b>#privacyMonth</b></p>
+      <div class="transform-app">
+        <input type="file" id="fileElem" class="hidden">
+        <button id="select-photo">Select profile photo</button>
+        <a href="#" id="download-btn" download="profile-pic.png"><button class="pure-button download-btn">Download</button></a>
+        <a class="hidden" id="twitter" href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Stay Secure, Support Privacy. #privacyMonth Visit https://privacymonth.online to support" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <br>
+        <canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
+      </div>
+      <div class="push"></div>
+    </div>
+    <footer class="footer">
+      <center>
+        Developed By <a href="https://www.facebook.com/mdsbzalam" target="_blank">Md Shahbaz Alam</a><br/>
+        Hosted proudly on <a href="https://github.com/shahbaz17/privacyMonth2017">github.com</a>
+      </center>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
