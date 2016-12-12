@@ -67,7 +67,6 @@ function loadOnCanvas(file) {
         ctx.drawImage(overlayImage, 0, 0);
         document.getElementById('download-btn').style.display = 'inline';
         document.getElementById('select-photo').style.display = 'none';
-        document.getElementById('twitter').style.display = 'inline';
       }
     }
     var baseImg = imageLoadTracker(e.target.result, imageProcess);
