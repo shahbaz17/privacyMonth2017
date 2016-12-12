@@ -10,6 +10,55 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
+<script>
+    // initialize and setup facebook js sdk
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '214187522365473',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            
+          } else if (response.status === 'not_authorized') {
+            
+          } else {
+            
+          }
+        });
+    };
+    
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function login() {
+      FB.login(function(response) {
+        if (response.status === 'connected') {
+            
+          } else if (response.status === 'not_authorized') {
+            
+          } else {
+            
+          }
+      }, {scope: 'publish_actions'});
+    }
+
+    // posting on user timeline
+    function post() {
+      FB.api('/me/feed', 'post', {message: 'Stay Secure, Support Privacy. #privacyMonth Visit http://privacymonth2017.online to support and change your profile picture.', link: 'http://privacymonth2017.online'}, function(response) {
+        
+      });
+    }
+</script>
+
     <h1>Stay Secure , Support Privacy</h1>
     <div class="container">
       <div class="manifesto">
@@ -21,6 +70,7 @@
         <input type="file" id="fileElem" class="hidden">
         <button id="select-photo">Select profile photo</button>
         <a href="#" id="download-btn" download="profile-pic.png"><button class="pure-button download-btn">Download</button></a>
+        <button onclick="post()">Post on Fb</button>
         <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Stay Secure, Support Privacy. #privacyMonth Visit http://privacymonth2017.online to support" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         <br>
         <canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
