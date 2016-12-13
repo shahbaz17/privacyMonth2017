@@ -50,8 +50,9 @@ a:hover {
 button{
   background: #8D20AE;
   color: #fff;
-  padding: 10px;
+  padding: 5px;
   border: 0;
+  border-radius: 5px;
   margin-bottom: 15px;
   cursor: pointer;
   font-size: 16px;
