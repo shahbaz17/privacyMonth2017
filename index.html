@@ -22,9 +22,8 @@
 
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
-            FB.api('/me/feed', 'post', {message: 'Stay Secure, Support Privacy. #privacyMonth Visit http://privacymonth2017.online to support and change your profile picture.', link: 'http://privacymonth2017.online'}, function(response) {
-              document.getElementById('status').innerHTML = 'Shared !!!!';
-          });
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('share').style.display = 'inline';
           } else if (response.status === 'not_authorized') {
             
           } else {
@@ -44,15 +43,21 @@
     function login() {
       FB.login(function(response) {
         if (response.status === 'connected') {
-            FB.api('/me/feed', 'post', {message: '"Stay Secure, Support Privacy" Visit http://privacymonth2017.online to show your support to user privacy by changing your Facebook Profile picture. #privacymonth #advocate4privacy #mozilla', link: 'http://privacymonth2017.online'}, function(response) {
-              document.getElementById('status').innerHTML = 'Shared !!!!';
-          });
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('share').style.display = 'inline';
           } else if (response.status === 'not_authorized') {
             
           } else {
             
           }
       }, {scope: 'publish_actions'});
+    }
+
+    // posting on user timeline
+    function post() {
+      FB.api('/me/feed', 'post', {message: '"Stay Secure, Support Privacy" Visit http://privacymonth2017.online to show your support to user privacy by changing your Facebook Profile picture. #privacymonth #advocate4privacy #mozilla', link: 'http://privacymonth2017.online'}, function(response) {
+          document.getElementById('status').innerHTML = 'Shared !!!!';
+      });
     }
 
   </script>
@@ -68,7 +73,8 @@
         <input type="file" id="fileElem" class="hidden">
         <button id="select-photo">Select profile photo</button>
         <a href="#" id="download-btn" download="privacy-pic.png"><button class="pure-button download-btn">Download</button></a>
-        <button id="status" onclick="login()">Share on Facebook</button>
+        <button id="share" style="display: none;" onclick="post()">Share on Facebook</button>
+        <button id="login" onclick="login()">Login to Fb to share</button>
         <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Stay Secure,Support Privacy.Visit privacymonth2017.online to change your profile pic in support #privacymonth #advocate4privacy #mozilla" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         <br>
         <canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
