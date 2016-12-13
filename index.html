@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Privacy Month 2017</title>
     <meta name="author" content="Md Shahbaz Alam - Mozilla India">
-    <meta name="description" content="Celebrate privacy month. Let's get smart on Privacy. Stay Secure Support Privacy.">
+    <meta name="description" content="Let's get smart on Privacy. Stay Secure Support Privacy. Celebrate privacy month. ">
     <meta property="og:title" content="Privacy Month | Celebrate privacy month. Let's get smart on Privacy. Stay Secure Support Privacy."/>
     <meta property="og:site_name" content="Privacy month | Celebrate privacy month. Let's get smart on Privacy. Stay Secure Support Privacy."/>
     <link rel="stylesheet" href="style.css">
@@ -45,7 +45,7 @@
       FB.login(function(response) {
         if (response.status === 'connected') {
             FB.api('/me/feed', 'post', {message: 'Stay Secure, Support Privacy. #privacyMonth Visit http://privacymonth2017.online to support and change your profile picture.', link: 'http://privacymonth2017.online'}, function(response) {
-        
+              document.getElementById('status').inlineHTML = 'Shared !!!!';
           });
           } else if (response.status === 'not_authorized') {
             
