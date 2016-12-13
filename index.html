@@ -56,7 +56,7 @@
     // posting on user timeline
     function post() {
       FB.api('/me/feed', 'post', {message: '"Stay Secure, Support Privacy" Visit http://privacymonth2017.online to show your support to user privacy by changing your Facebook Profile picture. #privacymonth #advocate4privacy #mozilla', link: 'http://privacymonth2017.online'}, function(response) {
-          document.getElementById('status').innerHTML = 'Shared !!!!';
+          document.getElementById('share').innerHTML = 'Shared !!!!';
       });
     }
 
