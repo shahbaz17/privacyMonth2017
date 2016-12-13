@@ -23,7 +23,7 @@
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             FB.api('/me/feed', 'post', {message: 'Stay Secure, Support Privacy. #privacyMonth Visit http://privacymonth2017.online to support and change your profile picture.', link: 'http://privacymonth2017.online'}, function(response) {
-              document.getElementById('status').inlineHTML = 'Shared !!!!';
+              document.getElementById('status').innerHTML = 'Shared !!!!';
           });
           } else if (response.status === 'not_authorized') {
             
@@ -45,7 +45,7 @@
       FB.login(function(response) {
         if (response.status === 'connected') {
             FB.api('/me/feed', 'post', {message: 'Stay Secure, Support Privacy. #privacyMonth Visit http://privacymonth2017.online to support and change your profile picture.', link: 'http://privacymonth2017.online'}, function(response) {
-              document.getElementById('status').inlineHTML = 'Shared !!!!';
+              document.getElementById('status').innerHTML = 'Shared !!!!';
           });
           } else if (response.status === 'not_authorized') {
             
