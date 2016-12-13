@@ -23,7 +23,7 @@
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             FB.api('/me/feed', 'post', {message: 'Stay Secure, Support Privacy. #privacyMonth Visit http://privacymonth2017.online to support and change your profile picture.', link: 'http://privacymonth2017.online'}, function(response) {
-        
+              document.getElementById('status').inlineHTML = 'Shared !!!!';
           });
           } else if (response.status === 'not_authorized') {
             
@@ -68,7 +68,7 @@
         <input type="file" id="fileElem" class="hidden">
         <button id="select-photo">Select profile photo</button>
         <a href="#" id="download-btn" download="profile-pic.png"><button class="pure-button download-btn">Download</button></a>
-        <button onclick="login()">Share on Fb</button>
+        <button id="status" onclick="login()">Share on Facebook</button>
         <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Stay Secure, Support Privacy. #privacyMonth Visit http://privacymonth2017.online to support" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         <br>
         <canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
