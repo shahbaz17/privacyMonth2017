@@ -70,13 +70,14 @@
       </div>
       <p style="font-size:14px;line-height:3;text-align:center">Upload your profile picture to generate one like the shown below. Change your profile picture to support and promote <b>#privacyMonth</b></p>
       <div class="transform-app">
-        <input type="file" id="fileElem" class="hidden">
-        <button id="select-photo">Select profile photo</button>
-        <a href="#" id="download-btn" download="privacy-pic.png"><button class="pure-button download-btn">Download</button></a>
-        <button id="share" style="display: none;" onclick="post()">Share on Facebook</button>
-        <button id="login" onclick="login()">Login to Fb to share</button>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Stay Secure,Support Privacy. #privacymonth #advocate4privacy #mozilla  To change your profile pic in support visit" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <br>
+        <div style="height: 30px !important;margin-bottom: 15px;">
+          <input type="file" id="fileElem" class="hidden">
+          <button id="select-photo">Select profile photo</button>
+          <a href="#" id="download-btn" download="privacy-pic.png"><button class="pure-button download-btn">Download</button></a>
+          <button id="share" style="display: none;" onclick="post()">Share on Facebook</button>
+          <button id="login" onclick="login()">Login to Fb to share</button>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Stay Secure,Support Privacy. #privacymonth #advocate4privacy #mozilla  To change your profile pic in support visit" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
         <canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
       </div>
       <div class="push"></div>
