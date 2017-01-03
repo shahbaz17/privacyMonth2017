@@ -1,98 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <title>Mês da Privacidade 2017</title>
-    <meta name="author" content="Md Shahbaz Alam - Mozilla India">
-    <meta name="description" content="Seja esperto com a privacidade. Fique seguro, apoie a privacidade. Celebre o mês da privacidade.">
-    <meta property="og:title" content="Mês da Privacidade | Celebre o mês da privacidade. Seja esperto com a privacidade. Fique seguro, apoie a privacidade."/>
-    <meta property="og:site_name" content="Mês da Privacidade | Celebre o mês da privacidade. Seja esperto com a privacidade. Fique seguro, apoie a privacidade."/>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+	<head>
+		<meta charset="utf-8">
+		<title>Mês da Privacidade 2017</title>
+		<meta name="author" content="Md Shahbaz Alam - Mozilla India">
+		<meta name="description" content="Fique esperto! Aprenda sobre privacidade e navegue com segurança. Apoie e celebre o mês da privacidade!">
+		<meta property="og:title" content="Mês da Privacidade | Celebre o mês da privacidade. Fique esperto! Aprenda e apoie a privacidade e navegue com segurança."/>
+		<meta property="og:site_name" content="Mês da Privacidade | Celebre o mês da privacidade. Fique esperto! Navegue com segurança e apoie a privacidade."/>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<script>
+		// initialize and setup facebook js sdk
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '214187522365473',
+				xfbml      : true,
+				version    : 'v2.5'
+			});Fique seguro, apoie a privacidade. Celebre o mês da privacidade
 
-<script>
-    // initialize and setup facebook js sdk
-    window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '214187522365473',
-          xfbml      : true,
-          version    : 'v2.5'
-        });Fique seguro, apoie a privacidade. Celebre o mês da privacidade
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					document.getElementById('login').style.display = 'none';
+					document.getElementById('share').style.display = 'inline';
+				} else if (response.status === 'not_authorized') {
 
-        FB.getLoginStatus(function(response) {
-          if (response.status === 'connected') {
-            document.getElementById('login').style.display = 'none';
-            document.getElementById('share').style.display = 'inline';
-          } else if (response.status === 'not_authorized') {
+				} else {
 
-          } else {
+				}
+			});
+		};
 
-          }
-        });
-    };
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/pt_BR/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
 
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+		function login() {
+			FB.login(function(response) {
+				if (response.status === 'connected') {
+					document.getElementById('login').style.display = 'none';
+					document.getElementById('share').style.display = 'inline';
+				} else if (response.status === 'not_authorized') {
 
-    function login() {
-      FB.login(function(response) {
-        if (response.status === 'connected') {
-            document.getElementById('login').style.display = 'none';
-            document.getElementById('share').style.display = 'inline';
-          } else if (response.status === 'not_authorized') {
+				} else {
 
-          } else {
+				}
+			}, {scope: 'publish_actions'});
+		}
 
-          }
-      }, {scope: 'publish_actions'});
-    }
+		// posting on user timeline
+		function post() {
+			FB.api('/me/feed', 'post', {message: '"Navegue com segurança. Apoie a privacidade." Visite http://privacymonth2017.online para mostrar o seu apoio a campanha de privacidade mudando a sua foto de perfil no Facebook. #privacymonth #advocate4privacy #mozilla'}, function(response) {
+				document.getElementById('share').innerHTML = 'Compartilhado!!!';
+			});
+		}
+		</script>
 
-    // posting on user timeline
-    function post() {
-      FB.api('/me/feed', 'post', {message: '"Fique seguro, apoie a privacidade." Visite http://privacymonth2017.online para mostrar seu apoio a campanha de privacidade mudando a sua foto de perfil do Facebook. #privacymonth #advocate4privacy #mozilla'}, function(response) {
-          document.getElementById('share').innerHTML = 'Shared !!!!';
-      });
-    }
-
-  </script>
-
-    <h1>Fique seguro, apoie a privacidade.</h1>
-    <div class="container">
-      <div class="manifesto">
-        "A segurança e a privacidade das pessoas na Internet são fundamentais e não devem ser tratadas como opção."
-        <i>- Mozilla Manifesto </i>
-      </div>
-      <p style="font-size:14px;line-height:3;text-align:center">Faça o upload de sua foto de perfil para gerar uma como a mostrada abaixo. Altere a sua imagem de perfil para apoiar e promover o <b>#privacyMonth</b></p>
-      <div class="transform-app">
-        <div style="height: 30px !important;margin-bottom: 15px;">
-          <input type="file" id="fileElem" class="hidden">
-          <button id="select-photo">Selecione sua foto de perfil</button>
-          <a href="#" id="download-btn" download="privacy-pic.png"><button class="pure-button download-btn">Download</button></a>
-          <button id="share" style="display: none;" onclick="post()">Compartilhe no Facebook</button>
-          <button id="login" onclick="login()">Faça login no Facebook para compartilhar</button>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Fique seguro, apoie a privacidade. #privacymonth #advocate4privacy #mozilla para mudar sua foto de perfil, visite " data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
-      </div>
-      <div class="push"></div>
-    </div>
-    <footer class="footer">
-      <center>
-        Developed by <a href="https://www.facebook.com/mdsbzalam" target="_blank">Md Shahbaz Alam</a> , Designed by <a href="https://www.facebook.com/shalinisk" target="_blank">Shalini Kr</a> and Localised by <a href="https://www.facebook.com/geraldobrs" target="_blank">Geraldo Barros</a><br/>
-        Hosted proudly on <a target="_blank" href="https://github.com/shahbaz17/privacyMonth2017">github.com</a>
-      </center>
-    </footer>
-    <div class="language">
-      <a href="../" class="EN lang">EN</a>
-      <a href="../ITA" class="ITA lang">ITA</a>
-      <a href="#" class="BR lang">PT-BR</a>
-    </div>
-    <script src="script.js"></script>
-  </body>
+		<h1>Navegue com segurança, apoie a privacidade</h1>
+		<div class="container">
+			<div class="manifesto">
+				"A segurança e privacidade do indivíduo na Internet são fundamentais e não devem ser tratadas como opcional."
+				<i>- Manifesto Mozilla</i>
+			</div>
+			<p style="font-size:14px;line-height:3;text-align:center">Mude a sua foto para apoiar e promover o <b>#privacymonth</b>. Faça o envio da sua foto para gerar uma imagem como a mostrada abaixo:</p>
+			<div class="transform-app">
+				<div style="height: 30px !important;margin-bottom: 15px;">
+					<input type="file" id="fileElem" class="hidden">
+					<button id="select-photo">Selecione a sua foto de perfil</button>
+					<a href="#" id="download-btn" download="privacy-pic.png"><button class="pure-button download-btn">Baixar</button></a>
+					<button id="share" style="display: none;" onclick="post()">Compartilhe no Facebook</button>
+					<button id="login" onclick="login()">Entre no Facebook para compartilhar</button>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Navegue com segurança e aprenda sobre a privacidade. #privacymonth #advocate4privacy #mozilla Mude a sua foto de perfil em apoio ao mês da privacidade." data-show-count="false">Tweetar</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
+				<canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
+			</div>
+			<div class="push"></div>
+		</div>
+		<footer class="footer">
+			<center>
+				Desenvolvido por <a href="https://www.facebook.com/mdsbzalam" target="_blank">Md Shahbaz Alam</a>, projetado por <a href="https://www.facebook.com/shalinisk" target="_blank">Shalini Kr</a> e traduzido por <a href="https://www.mozillabrasil.org.br/" target="_blank">Mozilla Brasil</a><br/>
+				Orgulhosamente hospedado no <a target="_blank" href="https://github.com/shahbaz17/privacyMonth2017">GitHub.com</a>
+			</center>
+		</footer>
+		<div class="language">
+			<a href="../" class="EN lang">EN</a>
+			<a href="../ITA" class="ITA lang">ITA</a>
+			<a href="#" class="BR lang">PT-BR</a>
+		</div>
+		<script src="script.js"></script>
+	</body>
 </html>
