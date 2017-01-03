@@ -17,7 +17,7 @@ h1 {
 }
 .container {
   margin: 0 auto;
-  width: 1000px;
+  width: 1050px;
 }
 .manifesto{
     background: #8D20AE;
@@ -66,15 +66,14 @@ button{
   border: 0;
   border-radius: 5px;
 }
-.ITA:hover{
+.ITA{
   background-color: #8D20AE;
   color: #fff;
-}
-.ITA{
-  color: #8D20AE;
 }
 .EN{
+  color: #8D20AE;
+}
+.EN:hover{
   background-color: #8D20AE;
   color: #fff;
 }
-
