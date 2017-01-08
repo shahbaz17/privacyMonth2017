@@ -84,11 +84,11 @@ button{
 .BR:hover{
   background-color: #8D20AE;
   color: #fff;
-<<<<<<< HEAD
 }
 .ES{
   color: #8D20AE;
 }
-=======
+.ES:hover{
+  background-color: #8D20AE;
+  color: #fff;
 }
->>>>>>> 758ac86d880d1b0e396ab9a67dbb9bcbb1ea3c00

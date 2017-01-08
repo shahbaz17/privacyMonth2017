@@ -18,19 +18,15 @@
 				xfbml      : true,
 				version    : 'v2.5'
 			});Fique seguro, apoie a privacidade. Celebre o mês da privacidade
-
 			FB.getLoginStatus(function(response) {
 				if (response.status === 'connected') {
 					document.getElementById('login').style.display = 'none';
 					document.getElementById('share').style.display = 'inline';
 				} else if (response.status === 'not_authorized') {
-
 				} else {
-
 				}
 			});
 		};
-
 		(function(d, s, id){
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) {return;}
@@ -38,20 +34,16 @@
 			js.src = "//connect.facebook.net/pt_BR/sdk.js";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
-
 		function login() {
 			FB.login(function(response) {
 				if (response.status === 'connected') {
 					document.getElementById('login').style.display = 'none';
 					document.getElementById('share').style.display = 'inline';
 				} else if (response.status === 'not_authorized') {
-
 				} else {
-
 				}
 			}, {scope: 'publish_actions'});
 		}
-
 		// posting on user timeline
 		function post() {
 			FB.api('/me/feed', 'post', {message: '"Navegue com segurança. Apoie a privacidade." Visite http://privacymonth2017.online para mostrar o seu apoio a campanha de privacidade mudando a sua foto de perfil no Facebook. #privacymonth #advocate4privacy #mozilla'}, function(response) {
@@ -91,10 +83,7 @@
 			<a href="../" class="EN lang">EN</a>
 			<a href="../ITA/" class="ITA lang">ITA</a>
 			<a href="#" class="BR lang">PT-BR</a>
-<<<<<<< HEAD
 			<a href="../ES" class="ES lang">ES</a>
-=======
->>>>>>> 758ac86d880d1b0e396ab9a67dbb9bcbb1ea3c00
 		</div>
 		<script src="script.js"></script>
 	</body>

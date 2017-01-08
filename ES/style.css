@@ -73,13 +73,21 @@ button{
 .ITA{
   color: #8D20AE;
 }
+.ITA:hover{
+  background-color: #8D20AE;
+  color: #fff;
+}
 .EN{
   color: #8D20AE;
+}
+.EN:hover{
+  background-color: #8D20AE;
+  color: #fff;
 }
 .BR{
   color: #8D20AE;
 }
-.EN:hover{
+.BR:hover{
   background-color: #8D20AE;
   color: #fff;
 }

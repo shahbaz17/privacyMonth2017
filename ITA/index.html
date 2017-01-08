@@ -19,7 +19,6 @@
           xfbml      : true,
           version    : 'v2.5'
         });
-
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             document.getElementById('login').style.display = 'none';
@@ -31,7 +30,6 @@
           }
         });
     };
-
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
@@ -39,27 +37,24 @@
         js.src = "//connect.facebook.net/it_IT/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
     function login() {
       FB.login(function(response) {
         if (response.status === 'connected') {
             document.getElementById('login').style.display = 'none';
             document.getElementById('share').style.display = 'inline';
           } else if (response.status === 'not_authorized') {
-            
+
           } else {
-            
+
           }
       }, {scope: 'publish_actions'});
     }
-
     // posting on user timeline
     function post() {
       FB.api('/me/feed', 'post', {message: '"Stay Secure, Support Privacy" Visit http://privacymonth2017.online to show your support to user privacy by changing your Facebook Profile picture. #privacymonth #advocate4privacy #mozilla'}, function(response) {
           document.getElementById('share').innerHTML = 'Shared !!!!';
       });
     }
-
   </script>
 
     <h1>Naviga sicuro, proteggi la tua privacy</h1>
@@ -93,7 +88,7 @@
       <a href="../" class="EN lang">EN</a>
       <a href="#" class="ITA lang">ITA</a>
       <a href="../PT-BR/" class="BR lang">PT-BR</a>
-      <a href="../ES" class="ES lang">ES</a>
+      <a href="../ES/" class="ES lang">ES</a>
     </div>
     <script src="script.js"></script>
   </body>
