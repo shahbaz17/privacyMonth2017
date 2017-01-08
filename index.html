@@ -19,25 +19,17 @@
           xfbml      : true,
           version    : 'v2.5'
         });
-
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             document.getElementById('login').style.display = 'none';
             document.getElementById('share').style.display = 'inline';
           } else if (response.status === 'not_authorized') {
-<<<<<<< HEAD
 
           } else {
 
-=======
-            
-          } else {
-            
->>>>>>> 758ac86d880d1b0e396ab9a67dbb9bcbb1ea3c00
           }
         });
     };
-
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
@@ -45,43 +37,30 @@
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
     function login() {
       FB.login(function(response) {
         if (response.status === 'connected') {
             document.getElementById('login').style.display = 'none';
             document.getElementById('share').style.display = 'inline';
           } else if (response.status === 'not_authorized') {
-<<<<<<< HEAD
 
           } else {
 
-=======
-            
-          } else {
-            
->>>>>>> 758ac86d880d1b0e396ab9a67dbb9bcbb1ea3c00
           }
       }, {scope: 'publish_actions'});
     }
-
     // posting on user timeline
     function post() {
       FB.api('/me/feed', 'post', {message: '"Stay Secure, Support Privacy" Visit http://privacymonth2017.online to show your support to user privacy by changing your Facebook Profile picture. #privacymonth #advocate4privacy #mozilla'}, function(response) {
           document.getElementById('share').innerHTML = 'Shared !!!!';
       });
     }
-
   </script>
 
     <h1>Stay Secure , Support Privacy</h1>
     <div class="container">
       <div class="manifesto">
-<<<<<<< HEAD
         " Individuals' security and privacy on the Internet are fundamental and must not be treated as optional."
-=======
-        " Individuals' security and privacy on the Internet are fundamental and must not be treated as optional." 
->>>>>>> 758ac86d880d1b0e396ab9a67dbb9bcbb1ea3c00
         <i>- mozilla manifesto </i>
       </div>
       <p style="font-size:14px;line-height:3;text-align:center">Upload your profile picture to generate one like the shown below. Change your profile picture to support and promote <b>#privacyMonth</b></p>
@@ -108,10 +87,7 @@
       <a href="#" class="EN lang">EN</a>
       <a href="ITA/" class="ITA lang">ITA</a>
       <a href="PT-BR/" class="BR lang">PT-BR</a>
-<<<<<<< HEAD
       <a href="ES/" class="ES lang">ES</a>
-=======
->>>>>>> 758ac86d880d1b0e396ab9a67dbb9bcbb1ea3c00
     </div>
     <script src="script.js"></script>
   </body>
