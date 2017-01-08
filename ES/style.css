@@ -66,9 +66,12 @@ button{
   border: 0;
   border-radius: 5px;
 }
-.ITA{
+.ES{
   background-color: #8D20AE;
   color: #fff;
+}
+.ITA{
+  color: #8D20AE;
 }
 .EN{
   color: #8D20AE;
@@ -76,12 +79,6 @@ button{
 .BR{
   color: #8D20AE;
 }
-<<<<<<< HEAD
-.ES{
-  color: #8D20AE;
-}
-=======
->>>>>>> 758ac86d880d1b0e396ab9a67dbb9bcbb1ea3c00
 .EN:hover{
   background-color: #8D20AE;
   color: #fff;
