@@ -12,7 +12,7 @@ function openFileDialog() {
 function loadPicture(evt) {
   var file = evt.target.files[0];
   if (!file.type.match('image.*')) {
-    alert("Oops! Looks like you didn't select an image?");
+    alert("¡Oh! Parece que no seleccionaste una foto.");
   } else {
     var reader = new FileReader();
     reader.addEventListener('load', loadOnCanvas(file), false);
