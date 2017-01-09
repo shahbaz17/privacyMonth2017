@@ -85,3 +85,10 @@ button{
   background-color: #8D20AE;
   color: #fff;
 }
+.ES{
+  color: #8D20AE;
+}
+.ES:hover{
+  background-color: #8D20AE;
+  color: #fff;
+}

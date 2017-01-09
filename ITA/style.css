@@ -73,10 +73,21 @@ button{
 .EN{
   color: #8D20AE;
 }
+.EN:hover{
+  background-color: #8D20AE;
+  color: #fff;
+}
 .BR{
   color: #8D20AE;
 }
-.EN:hover{
+.BR:hover{
+  background-color: #8D20AE;
+  color: #fff;
+}
+.ES{
+  color: #8D20AE;
+}
+.ES:hover{
   background-color: #8D20AE;
   color: #fff;
 }

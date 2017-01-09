@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Mes de la Privacidad 2017</title>
+    <meta name="author" content="Md Shahbaz Alam - Mozilla India">
+    <meta name="description" content="Seamos maestros en privacidad. Mantente Seguro, apoya la Privacidad. Celebra el Mes de la Privacidad. ">
+    <meta property="og:title" content="Mes de la Privacidad | Celebra el Mes de la Privacidad. Seamos Maestros de la Privacidad. Mantente Seguro y Apoya la Privacidad."/>
+    <meta property="og:site_name" content="Mes de la Privacidad | Celebra el Mes de la Privacidad. Seamos Maestros de la Privacidad. Mantente Seguro y Apoya la Privacidad."/>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+<script>
+    // initialize and setup facebook js sdk
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '214187522365473',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('share').style.display = 'inline';
+          } else if (response.status === 'not_authorized') {
+
+          } else {
+
+          }
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function login() {
+      FB.login(function(response) {
+        if (response.status === 'connected') {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('share').style.display = 'inline';
+          } else if (response.status === 'not_authorized') {
+
+          } else {
+
+          }
+      }, {scope: 'publish_actions'});
+    }
+
+    // posting on user timeline
+    function post() {
+      FB.api('/me/feed', 'post', {message: '"Mantente Seguro, Apoya la Privacidad" Visita http://privacymonth2017.online para mostrar tu apoyo a la privacidad, cambiando tu foto de perfil en Facebook. #privacymonth #advocate4privacy #mozilla'}, function(response) {
+          document.getElementById('share').innerHTML = 'Shared !!!!';
+      });
+    }
+
+  </script>
+
+    <h1>Mantente Seguro , Apoya la Privacidad</h1>
+    <div class="container">
+      <div class="manifesto">
+        "La seguridad y la privacidad en Internet es fundamental y no debe ser tratada como algo opcional."
+        <i>- Manifiesto de Mozilla </i>
+      </div>
+      <p style="font-size:14px;line-height:3;text-align:center">Sube tu foto para generar una imagen como la que se muestra debajo. Cambia tu foto de perfil para apoyar y promover el <b>#privacyMonth</b></p>
+      <div class="transform-app">
+        <div style="height: 30px !important;margin-bottom: 15px;">
+          <input type="file" id="fileElem" class="hidden">
+          <button id="select-photo">Selecciona una foto de perfil</button>
+          <a href="#" id="download-btn" download="privacy-pic.png"><button class="pure-button download-btn">Descarga</button></a>
+          <button id="share" style="display: none;" onclick="post()">Comparte en Facebook</button>
+          <button id="login" onclick="login()">Inicia sesión en Facebook para compartir</button>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Mantente Seguro, Apoya la Privacidad. #privacymonth #advocate4privacy #mozilla Para cambiar tu foto de perfil en apoyo, visita" data-show-count="false">Tweetear</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
+      </div>
+      <div class="push"></div>
+    </div>
+    <footer class="footer">
+      <center>
+        Desarrollado por <a href="https://www.facebook.com/mdsbzalam" target="_blank">Md Shahbaz Alam</a>, Diseñado por <a href="https://www.facebook.com/shalinisk" target="_blank">Shalini Kr</a> y Traducidor por <a href="http://mozillapanama.org/">Mozilla Panamá</a> <br/>
+        Orgullosamente hospedado en <a target="_blank" href="https://github.com/shahbaz17/privacyMonth2017">github.com</a>
+      </center>
+    </footer>
+    <div class="language">
+      <a href="../" class="EN lang">EN</a>
+      <a href="#" class="ES lang">ES</a>
+      <a href="../ITA" class="ITA lang">ITA</a>
+      <a href="../PT-BR" class="BR lang">PT-BR</a>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
