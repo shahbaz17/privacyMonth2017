@@ -66,28 +66,14 @@ button{
   border: 0;
   border-radius: 5px;
 }
-.ITA:hover{
-  background-color: #8D20AE;
-  color: #fff;
-}
-.ITA{
-  color: #8D20AE;
-}
-.EN{
-  color: #8D20AE;
-}
-.EN:hover{
-  background-color: #8D20AE;
-  color: #fff;
-}
 .BR{
   background-color: #8D20AE;
   color: #fff;
 }
-.ES{
+.EN,.DE,.ES,.ITA{
   color: #8D20AE;
 }
-.ES:hover{
+.EN:hover,.DE:hover,.ES:hover,.ITA:hover{
   background-color: #8D20AE;
   color: #fff;
 }
