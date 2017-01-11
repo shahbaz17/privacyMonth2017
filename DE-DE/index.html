@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8">
     <title>Privacy Month 2017</title>
@@ -19,59 +19,64 @@
           xfbml      : true,
           version    : 'v2.5'
         });
+
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             document.getElementById('login').style.display = 'none';
             document.getElementById('share').style.display = 'inline';
           } else if (response.status === 'not_authorized') {
-
+            
           } else {
-
+            
           }
         });
     };
+
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/it_IT/sdk.js";
+        js.src = "//connect.facebook.net/de_DE/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
     function login() {
       FB.login(function(response) {
         if (response.status === 'connected') {
             document.getElementById('login').style.display = 'none';
             document.getElementById('share').style.display = 'inline';
           } else if (response.status === 'not_authorized') {
-
+            
           } else {
-
+            
           }
       }, {scope: 'publish_actions'});
     }
+
     // posting on user timeline
     function post() {
       FB.api('/me/feed', 'post', {message: '"Stay Secure, Support Privacy" Visit http://privacymonth2017.online to show your support to user privacy by changing your Facebook Profile picture. #privacymonth #advocate4privacy #mozilla'}, function(response) {
           document.getElementById('share').innerHTML = 'Shared !!!!';
       });
     }
+
   </script>
 
-    <h1>Naviga sicuro, proteggi la tua privacy</h1>
+    <h1>Surf sicher, schütz dein Privatleben</h1>
     <div class="container">
       <div class="manifesto">
-        " Individuals' security and privacy on the Internet are fundamental and must not be treated as optional."
-        <i>- mozilla manifesto </i>
+          “Die Sicherheit und der Schutz der Daten einer Person im Internet sind von grundlegender Bedeutung und dürfen nicht als optional betrachtet werden.”
+        <i>- Das Mozilla-Manifest</i>
       </div>
-      <p style="font-size:14px;line-height:3;text-align:center">Cambia la foto del profilo per supportare e promuovere il <b>#privacymonth</b>. Carica la tua foto del profilo per avere la tua versione come sotto.</p>
+      <p style="font-size:14px;line-height:3;text-align:center">Lade dein Profilbild hoch um eines wie das untenstehende zu generieren. Ändere dein Profilbild als Zeichen der Unterstützung und bewirb <b>#privacyMonth</b></p>
       <div class="transform-app">
         <div style="height: 30px !important;margin-bottom: 15px;">
           <input type="file" id="fileElem" class="hidden">
-          <button id="select-photo">Seleziona la foto del profilo</button>
-          <a href="#" id="download-btn" download="privacy-pic.png"><button class="pure-button download-btn">Scarica</button></a>
-          <button id="share" style="display: none;" onclick="post()">Condividi su Facebook</button>
-          <button id="login" onclick="login()">Entra su Facebook per condividere</button>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Naviga sicuro, proteggi la tua privacy. #privacymonth #advocate4privacy #mozilla  Cambia il tuo avatar per la campagna su" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <button id="select-photo">Profilbild auswählen</button>
+          <a href="#" id="download-btn" download="privacy-pic.png"><button class="pure-button download-btn">Download</button></a>
+          <button id="share" style="display: none;" onclick="post()">Teilen auf Facebook</button>
+          <button id="login" onclick="login()">Melde dich zum Teilen bei Facebook an</button>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Surf sicher, schütz dein Privatleben. #privacymonth #advocate4privacy #mozilla Um dein Profilbild als Zeichen der Unterstützung zu ändern, besuche" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <canvas id="canvas" class="magic pure-img" width="800" height="800"></canvas><br>
       </div>
@@ -79,15 +84,15 @@
     </div>
     <footer class="footer">
       <center>
-        Developed by <a href="https://www.facebook.com/mdsbzalam" target="_blank">Md Shahbaz Alam</a> , Designed by <a href="https://www.facebook.com/shalinisk" target="_blank">Shalini Kr</a> and Localised by <a href="http://mozillaitalia.org" target="_blank">Mozilla Italia</a><br/>
-        Hosted proudly on <a target="_blank" href="https://github.com/shahbaz17/privacyMonth2017">github.com</a>
+        Entwickelt von <a href="https://www.facebook.com/mdsbzalam" target="_blank">Md Shahbaz Alam</a> und designed von <a href="https://www.facebook.com/shalinisk" target="_blank">Shalini Kr</a><br/>
+        Stolz gehostet auf <a target="_blank" href="https://github.com/shahbaz17/privacyMonth2017">github.com</a>
       </center>
     </footer>
     <div class="language">
-      <a href="../DE-DE/" class="DE lang">DE</a>
+      <a href="#" class="DE lang">DE</a>
       <a href="../" class="EN lang">EN</a>
-      <a href="../ES/" class="ES lang">ES</a>
-      <a href="#" class="ITA lang">ITA</a>
+      <a href="../ES/" class="ES lang">EN</a>
+      <a href="../ITA/" class="ITA lang">ITA</a>
       <a href="../PT-BR/" class="BR lang">PT-BR</a>
     </div>
     <script src="script.js"></script>
